@@ -51,15 +51,44 @@ The focus is **template quality** and **landing page presentation** only.
 
 | Layer | Technology | Usage |
 |-------|------------|-------|
-| Templates | `@unlayer/react-elements` | All email and document templates |
+| Templates | `@unlayer/react-elements` | Email and document templates **only** |
 | Framework | Next.js 15 (App Router) | Landing page, preview routes |
 | Language | TypeScript (strict) | Entire codebase |
-| Landing UI | Tailwind CSS | Landing page components only |
+| Landing UI | **shadcn/ui** + Tailwind CSS | All web UI components (default) |
 | Icons | Lucide React | Line icons only—no filled sets |
 | Fonts | Inter (primary), Geist (alternative) | Via `next/font` |
 | Version control | GitHub | Public repo, MIT license |
 
-**Critical rule:** Tailwind CSS is for the **landing page only**. Email and document templates use Elements props and inline styles—never Tailwind classes inside `<Email>` or `<Document>` trees.
+### UI Component Policy (shadcn-first)
+
+**Default to shadcn/ui for all web UI.** Use components from `src/components/ui/` (Button, Card, Badge, Tabs, etc.) for:
+
+- Landing page sections
+- Template browse page
+- Preview page chrome (toolbars, layout wrappers)
+- Any interactive web interface
+
+**Only use `@unlayer/react-elements` where required:**
+
+- Inside `<Email>`, `<Document>`, or `<Page>` template trees
+- Shared blocks in `src/elements/shared/` that compose into templates
+- `renderToHtml()` / `renderToPlainText()` output
+
+**Do not** build custom landing UI primitives when a shadcn component exists. Extend shadcn via `className` and design tokens—not bespoke Button/Card implementations.
+
+**Link + Button pattern:** This project uses shadcn base-nova (`@base-ui/react`). For navigation buttons, use `buttonVariants()` with Next.js `<Link>` — not `asChild`.
+
+```tsx
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+<Link href="/templates" className={cn(buttonVariants({ variant: "outline" }))}>
+  Browse Templates
+</Link>
+```
+
+**Critical rule:** Tailwind and shadcn classes are for the **web app only**. Email and document templates use Elements props and inline styles—never Tailwind or shadcn inside `<Email>` or `<Document>` trees.
 
 ---
 
@@ -88,7 +117,8 @@ elements-challenge/
     │       ├── email/[slug]/page.tsx
     │       └── document/[slug]/page.tsx
     ├── components/
-    │   └── landing/          # Tailwind React components
+    │   ├── ui/               # shadcn/ui primitives (Button, Card, Badge, etc.)
+    │   └── landing/          # Landing page sections (compose shadcn + Lucide)
     │       ├── Nav.tsx
     │       ├── Hero.tsx
     │       ├── FeaturedSectionHeader.tsx
@@ -372,6 +402,7 @@ Screenshots: capture at 2x resolution. Use `scripts/export-html.ts` to generate 
 
 | Mistake | Correct approach |
 |---------|------------------|
+| Building custom Button/Card instead of shadcn | Use `src/components/ui/` shadcn components |
 | Using Tailwind inside `<Email>` components | Elements props and inline styles only |
 | Skipping Row/Column hierarchy | Always nest content inside Column inside Row |
 | Cards without Featured section header | Always render `FeaturedSectionHeader` first |

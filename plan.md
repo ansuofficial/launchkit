@@ -11,7 +11,7 @@
 
 **Project:** LaunchKit — premium email & document templates for modern software teams  
 **Challenge:** Build With Elements Challenge 2026 (deadline: July 31, 2026)  
-**Stack:** Next.js 15 · TypeScript · Tailwind CSS · `@unlayer/react-elements`
+**Stack:** Next.js 15 · TypeScript · shadcn/ui · Tailwind CSS · `@unlayer/react-elements`
 
 **Deliverables:**
 
@@ -114,32 +114,41 @@ Max width: `1280px` container.
 
 ---
 
-## Phase 1 — Design System in Code
+## Phase 1 — Design System in Code (shadcn/ui)
 
-**Goal:** Reusable landing page UI primitives.
+**Goal:** shadcn/ui configured with LaunchKit design tokens. No custom UI primitives.
 
 ### Tasks
 
 1. Create `src/styles/tokens.css` — CSS custom properties mirroring design system
-2. Create `src/styles/globals.css` — base resets, font smoothing, selection color
-3. Build primitives in `src/components/landing/ui/`:
+2. Create `src/styles/globals.css` — base resets + shadcn CSS variables mapped to LaunchKit tokens
+3. Initialize shadcn/ui:
+   ```bash
+   npx shadcn@latest init
+   ```
+4. Add core shadcn components:
+   ```bash
+   npx shadcn@latest add button card badge separator
+   ```
+5. Theme shadcn variables to LaunchKit palette (`--primary` → `#6D5EF7`, radii per design-system.md)
+6. Create thin layout helpers in `src/components/landing/` only when shadcn has no equivalent (`Container`, `Section`)
+7. Optional: `/design-system` dev route showcasing themed shadcn components
 
-| Component | Spec |
-|-----------|------|
-| `Container` | Max-width 1280px, horizontal padding 24px (mobile) / 32px (desktop) |
-| `Button` | Primary (filled `#6D5EF7`), Secondary (bordered), 14px radius |
-| `Badge` | Small, rounded, neutral background |
-| `Card` | 20px radius, minimal border, large padding |
-| `Section` | Vertical padding 64px (96px for hero) |
+### shadcn component map (default for all web UI)
 
-4. Optional: `/design-system` dev route showing all primitives (remove before submission or keep for docs)
+| Need | shadcn component |
+|------|------------------|
+| Buttons / CTAs | `Button` |
+| Cards / panels | `Card` |
+| Labels / tags | `Badge` |
+| Dividers | `Separator` |
 
 ### Checkpoint
 
-- [ ] All primitives render correctly in light and dark contexts
-- [ ] Button hover/focus states work
-- [ ] Spacing uses only the 8pt scale
-- [ ] No arbitrary color values outside design system
+- [x] shadcn/ui initialized in `src/components/ui/`
+- [x] Button, Card, Badge render with LaunchKit purple accent
+- [x] Theme uses design-system tokens (no arbitrary colors)
+- [x] No bespoke Button/Card/Badge in `src/components/`
 
 ---
 
@@ -172,6 +181,7 @@ Max width: `1280px` container.
 5. Create preview route `src/app/preview/email/[slug]/page.tsx`
    - Server component calls `renderToHtml()`
    - Renders HTML in sandboxed iframe
+   - Preview chrome (toolbar, back link) uses **shadcn** `Button` + `Card`
 
 ### Email defaults (document in code comments)
 
@@ -182,10 +192,10 @@ Max width: `1280px` container.
 
 ### Checkpoint
 
-- [ ] Hello email renders via `/preview/email/hello`
-- [ ] `renderToHtml()` produces valid HTML (no console errors)
-- [ ] Shared blocks compose without hierarchy violations
-- [ ] Template registry structure is in place
+- [x] Hello email renders via `/preview/email/hello`
+- [x] `renderToHtml()` produces valid HTML (no console errors)
+- [x] Shared blocks compose without hierarchy violations
+- [x] Template registry structure is in place
 
 ---
 
