@@ -10,7 +10,6 @@ import {
   EMAIL_ROW_BG,
   FONT_FAMILY,
   TEXT_MUTED,
-  TEXT_PRIMARY,
 } from "./constants";
 
 interface BrandHeaderProps {
