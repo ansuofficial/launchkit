@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --color-lk-bg-primary: var(--lk-bg-primary);
+  --color-lk-bg-secondary: var(--lk-bg-secondary);
+  --color-lk-bg-surface: var(--lk-bg-surface);
+  --color-lk-accent: var(--lk-accent);
+  --color-lk-accent-secondary: var(--lk-accent-secondary);
+  --color-lk-accent-blue: var(--lk-accent-blue);
+  --color-lk-accent-highlight: var(--lk-accent-highlight);
+  --color-lk-bg-light: var(--lk-bg-light);
+  --color-lk-bg-light-muted: var(--lk-bg-light-muted);
+  --color-lk-text-primary: var(--lk-text-primary);
+  --color-lk-text-muted: var(--lk-text-muted);
+
+  --spacing-lk-1: var(--lk-space-1);
+  --spacing-lk-2: var(--lk-space-2);
+  --spacing-lk-3: var(--lk-space-3);
+  --spacing-lk-4: var(--lk-space-4);
+  --spacing-lk-5: var(--lk-space-5);
+  --spacing-lk-6: var(--lk-space-6);
+  --spacing-lk-7: var(--lk-space-7);
+
+  --radius-lk-card: var(--lk-radius-card);
+  --radius-lk-button: var(--lk-radius-button);
+  --radius-lk-input: var(--lk-radius-input);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--lk-bg-light);
+  color: var(--lk-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--lk-accent) 25%, transparent);
+}

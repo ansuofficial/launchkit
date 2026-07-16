@@ -1,0 +1,36 @@
+:root {
+  /* Backgrounds */
+  --lk-bg-primary: #08090f;
+  --lk-bg-secondary: #0f111a;
+  --lk-bg-surface: #151826;
+  --lk-border: rgba(255, 255, 255, 0.08);
+
+  /* Accents */
+  --lk-accent: #6d5ef7;
+  --lk-accent-secondary: #8b7cff;
+  --lk-accent-blue: #5ea8ff;
+  --lk-accent-highlight: #bfa7ff;
+
+  /* Light surfaces (landing hero sections) */
+  --lk-bg-light: #ffffff;
+  --lk-bg-light-muted: #f8f9fc;
+  --lk-text-primary: #0a0a0f;
+  --lk-text-muted: #5c6370;
+
+  /* Spacing scale */
+  --lk-space-1: 8px;
+  --lk-space-2: 16px;
+  --lk-space-3: 24px;
+  --lk-space-4: 32px;
+  --lk-space-5: 48px;
+  --lk-space-6: 64px;
+  --lk-space-7: 96px;
+
+  /* Radii */
+  --lk-radius-card: 20px;
+  --lk-radius-button: 14px;
+  --lk-radius-input: 12px;
+
+  /* Layout */
+  --lk-max-width: 1280px;
+}
