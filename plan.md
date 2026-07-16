@@ -107,10 +107,10 @@ Max width: `1280px` container.
 
 ### Checkpoint
 
-- [ ] `npm run dev` serves without errors
-- [ ] Fonts load correctly
-- [ ] Tailwind tokens available in a test component
-- [ ] Folder structure matches Agents.md
+- [x] `npm run dev` serves without errors
+- [x] Fonts load correctly
+- [x] Tailwind tokens available in a test component
+- [x] Folder structure matches Agents.md
 
 ---
 
