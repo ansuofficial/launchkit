@@ -13,7 +13,7 @@ export default async function EmailPreviewPage({
   const { slug } = await params;
   const template = getTemplateBySlug("email", slug);
 
-  if (!template) {
+  if (!template?.component) {
     notFound();
   }
 

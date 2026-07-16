@@ -307,12 +307,12 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 
 ### Checkpoint
 
-- [ ] Featured section has title + description + GitHub CTA above cards
-- [ ] Two showcase cards display with preview thumbnails
-- [ ] Dark gallery section uses `#08090F`
-- [ ] Responsive at 375px and 1280px
-- [ ] No challenge sidebar present
-- [ ] Subtle animations only (≤ 250ms)
+- [x] Featured section has title + description + GitHub CTA above cards
+- [x] Two showcase cards display with preview thumbnails
+- [x] Dark gallery section uses `#08090F`
+- [x] Responsive at 375px and 1280px
+- [x] No challenge sidebar present
+- [x] Subtle animations only (≤ 250ms)
 
 ---
 
