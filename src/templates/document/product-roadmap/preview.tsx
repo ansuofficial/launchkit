@@ -1,7 +1,7 @@
 import type { ProductRoadmapDocumentProps } from "./index";
 
 export const productRoadmapPreview: ProductRoadmapDocumentProps = {
-  title: "Flowstack Product Roadmap",
+  title: "LaunchKit Product Roadmap",
   period: "H1 2026",
   audience: "customers and partners",
   lastUpdated: "March 15, 2026",

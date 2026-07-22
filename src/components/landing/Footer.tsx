@@ -8,6 +8,7 @@ const footerLinks = [
   { label: "Templates", href: "/templates" },
   { label: "GitHub", href: SITE.githubUrl, external: true },
   { label: "Elements Docs", href: SITE.elementsDocsUrl, external: true },
+  { label: "Unlayer", href: SITE.unlayerUrl, external: true },
 ];
 
 export function Footer() {
@@ -26,14 +27,23 @@ export function Footer() {
             <p className="max-w-xs text-sm text-muted-foreground">
               Built with{" "}
               <a
-                href={SITE.elementsDocsUrl}
+                href={SITE.elementsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
                 Elements
               </a>{" "}
-              by Unlayer. {SITE.challengeHashtag}
+              by{" "}
+              <a
+                href={SITE.unlayerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Unlayer
+              </a>
+              . {SITE.challengeHashtag}
             </p>
           </div>
 

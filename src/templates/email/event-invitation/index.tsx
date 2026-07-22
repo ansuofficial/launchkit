@@ -37,7 +37,7 @@ export interface EventInvitationEmailProps {
 }
 
 export function EventInvitationEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   eventName,
   eventDate,
   eventTime,

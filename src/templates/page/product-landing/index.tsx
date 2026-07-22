@@ -60,14 +60,14 @@ export interface ProductLandingPageProps {
  * Premium SaaS product landing - restrained type, real photography, clear hierarchy.
  */
 export function ProductLandingPage({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   eyebrow = "Product operations",
   headline,
   subheadline,
   primaryCtaLabel,
   primaryCtaUrl,
   secondaryCtaLabel = "Watch demo",
-  secondaryCtaUrl = "https://flowstack.io/demo",
+  secondaryCtaUrl = "https://launchkit.io/demo",
   heroImageUrl = TEMPLATE_IMAGES.pageHeroProduct,
   logosLabel = "Trusted by product teams at",
   logos,

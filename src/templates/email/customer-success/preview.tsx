@@ -2,7 +2,7 @@ import type { CustomerSuccessEmailProps } from "./index";
 
 export const customerSuccessPreview: CustomerSuccessEmailProps = {
   customerName: "Northwind Labs",
-  milestone: "One year on Flowstack Enterprise",
+  milestone: "One year on LaunchKit Enterprise",
   message:
     "Your team has shipped 148 releases, onboarded 240 collaborators, and maintained a 99.97% uptime SLA. We are proud to be part of your growth, and excited for what is next.",
   stats: [
@@ -11,5 +11,5 @@ export const customerSuccessPreview: CustomerSuccessEmailProps = {
     { value: "99.97%", label: "Platform uptime" },
   ],
   ctaLabel: "Schedule a strategy review",
-  ctaUrl: "https://flowstack.io/customer-success",
+  ctaUrl: "https://launchkit.io/customer-success",
 };

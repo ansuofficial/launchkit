@@ -35,7 +35,7 @@ export function Nav() {
             >
               Templates
             </Link>
-            <Link
+            <a
               href={SITE.elementsDocsUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -45,16 +45,18 @@ export function Nav() {
               )}
             >
               Docs
-            </Link>
-            <Link
-              href="/templates"
+            </a>
+            <a
+              href={SITE.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "sm" }),
                 "rounded-[10px] px-3.5",
               )}
             >
               Get Started
-            </Link>
+            </a>
           </div>
         </nav>
       </Container>

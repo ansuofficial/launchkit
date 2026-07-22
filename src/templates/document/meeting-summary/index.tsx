@@ -37,7 +37,7 @@ export interface MeetingSummaryDocumentProps {
 }
 
 export function MeetingSummaryDocument({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   meetingTitle,
   meetingDate,
   duration,

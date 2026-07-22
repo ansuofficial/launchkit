@@ -46,7 +46,7 @@ export interface ProductProposalDocumentProps {
 }
 
 export function ProductProposalDocument({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   title,
   clientName,
   preparedBy,

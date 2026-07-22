@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Github } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
@@ -19,7 +18,7 @@ export function FeaturedSectionHeader({
       <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
         {description}
       </p>
-      <Link
+      <a
         href={SITE.githubUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -27,7 +26,7 @@ export function FeaturedSectionHeader({
       >
         <Github className="size-4" />
         View on GitHub
-      </Link>
+      </a>
     </div>
   );
 }

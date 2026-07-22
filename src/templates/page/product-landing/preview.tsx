@@ -2,15 +2,15 @@ import type { ProductLandingPageProps } from "./index";
 import { TEMPLATE_IMAGES } from "@/elements/assets";
 
 export const productLandingPreview: ProductLandingPageProps = {
-  brandName: "Flowstack",
+  brandName: "LaunchKit",
   eyebrow: "Product operations platform",
   headline: "Ship product work with clarity, not chaos",
   subheadline:
     "Unify roadmaps, launch checklists, and customer updates so your team moves from idea to release without losing the thread.",
   primaryCtaLabel: "Start free trial",
-  primaryCtaUrl: "https://flowstack.io/signup",
+  primaryCtaUrl: "https://launchkit.io/signup",
   secondaryCtaLabel: "Watch 2-min demo",
-  secondaryCtaUrl: "https://flowstack.io/demo",
+  secondaryCtaUrl: "https://launchkit.io/demo",
   heroImageUrl: TEMPLATE_IMAGES.pageHeroProduct,
   logosLabel: "Trusted by product teams at",
   logos: "Northwind · Atlas · Lumen · Vantage · Orbit",
@@ -68,7 +68,7 @@ export const productLandingPreview: ProductLandingPageProps = {
   featureImageUrl: TEMPLATE_IMAGES.pageFeatureWorkflow,
   testimonial: {
     quote:
-      "Flowstack replaced three tools for us. Launches went from frantic Slack threads to a calm, shared checklist everyone trusts.",
+      "LaunchKit replaced three tools for us. Launches went from frantic Slack threads to a calm, shared checklist everyone trusts.",
     name: "Maya Chen",
     role: "Head of Product, Northwind Labs",
     avatarUrl: TEMPLATE_IMAGES.pageTestimonial,

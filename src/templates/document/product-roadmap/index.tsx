@@ -41,7 +41,7 @@ export interface ProductRoadmapDocumentProps {
 }
 
 export function ProductRoadmapDocument({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   title,
   period,
   audience,
