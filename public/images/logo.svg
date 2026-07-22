@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" role="img" aria-label="LaunchKit">
+  <rect width="48" height="48" rx="12" fill="#1A1A1F"/>
+  <path d="M24 13 L33 18.5 L24 24 L15 18.5 Z" fill="white" opacity="0.95"/>
+  <path d="M15 26.5 L24 32 L33 26.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <path d="M15 31.5 L24 37 L33 31.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+</svg>

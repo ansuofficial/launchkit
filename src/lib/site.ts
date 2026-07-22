@@ -8,6 +8,14 @@
 export const SITE = {
   name: "LaunchKit",
   tagline: "Professional email & document templates for modern software teams.",
+  /**
+   * Canonical public site URL (metadata, Open Graph).
+   * Override with NEXT_PUBLIC_SITE_URL when deploying.
+   */
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://launchkit.vercel.app",
+  /** Brand mark used in chrome, favicons, and social cards. */
+  logoPath: "/images/logo.svg",
   /** Public LaunchKit repository (clone, star, contribute). */
   githubUrl: "https://github.com/ansuofficial/launchkit",
   /** Elements product page (Unlayer). */

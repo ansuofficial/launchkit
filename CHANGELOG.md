@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/) for tagge
 
 ### Added
 
+- Premium README screenshots under `public/images/readme/` (2x retina) and `npm run screenshots` capture script
+
 - Open-source readiness pass: `.editorconfig`, `CHANGELOG.md`, expanded README and CONTRIBUTING
 - Working `npm run export-html` that writes static HTML under `public/exports/`
 - Legacy redirect for `/preview/page/<slug>` to match email and document routes
@@ -28,6 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/) for tagge
 ## [0.1.0] - 2026-07
 
 ### Added
+
+- Premium README screenshots under `public/images/readme/` (2x retina) and `npm run screenshots` capture script
 
 - Landing page, template browse UI, and live previews
 - 8 email templates, 4 document templates, and 4 page templates built with Elements
