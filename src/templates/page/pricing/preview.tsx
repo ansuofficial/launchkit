@@ -1,7 +1,7 @@
 import type { PricingPageProps } from "./index";
 
 export const pricingPreview: PricingPageProps = {
-  brandName: "Flowstack",
+  brandName: "LaunchKit",
   headline: "Pricing that scales with your team",
   subheadline:
     "Start free for side projects. Upgrade when launches, approvals, and customer updates need a real system.",
@@ -14,7 +14,7 @@ export const pricingPreview: PricingPageProps = {
       features:
         "✓ Up to 3 seats<br/>✓ 2 active launch playbooks<br/>✓ Email templates library<br/>✓ Community support",
       ctaLabel: "Get started",
-      ctaUrl: "https://flowstack.io/signup?plan=starter",
+      ctaUrl: "https://launchkit.io/signup?plan=starter",
     },
     {
       name: "Growth",
@@ -24,7 +24,7 @@ export const pricingPreview: PricingPageProps = {
       features:
         "✓ Unlimited playbooks<br/>✓ Shared roadmaps<br/>✓ Brand kit & custom domains<br/>✓ Priority chat support",
       ctaLabel: "Start Growth trial",
-      ctaUrl: "https://flowstack.io/signup?plan=growth",
+      ctaUrl: "https://launchkit.io/signup?plan=growth",
       highlighted: true,
     },
     {
@@ -35,7 +35,7 @@ export const pricingPreview: PricingPageProps = {
       features:
         "✓ SSO & SCIM<br/>✓ Audit logs<br/>✓ Dedicated success manager<br/>✓ Custom data retention",
       ctaLabel: "Contact sales",
-      ctaUrl: "https://flowstack.io/contact?plan=business",
+      ctaUrl: "https://launchkit.io/contact?plan=business",
     },
   ],
   faqs: [

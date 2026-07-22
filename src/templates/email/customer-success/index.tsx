@@ -40,7 +40,7 @@ export interface CustomerSuccessEmailProps {
 }
 
 export function CustomerSuccessEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   customerName,
   milestone,
   message,

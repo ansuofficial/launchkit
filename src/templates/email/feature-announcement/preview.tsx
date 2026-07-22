@@ -20,5 +20,5 @@ export const featureAnnouncementPreview: FeatureAnnouncementEmailProps = {
     },
   ],
   ctaLabel: "Try Smart Workflows",
-  ctaUrl: "https://flowstack.io/workflows",
+  ctaUrl: "https://launchkit.io/workflows",
 };

@@ -2,7 +2,7 @@ import type { WelcomeEmailProps } from "./index";
 
 export const welcomePreview: WelcomeEmailProps = {
   userName: "Alex",
-  headline: "Welcome to Flowstack, Alex",
+  headline: "Welcome to LaunchKit, Alex",
   intro:
     "You now have a workspace built for shipping fast and staying aligned. Complete the steps below to connect your team and send your first project update.",
   steps: [
@@ -20,5 +20,5 @@ export const welcomePreview: WelcomeEmailProps = {
     },
   ],
   ctaLabel: "Complete setup",
-  ctaUrl: "https://flowstack.io/onboarding",
+  ctaUrl: "https://launchkit.io/onboarding",
 };

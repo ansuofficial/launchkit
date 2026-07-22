@@ -2,7 +2,7 @@ import type { WebinarPageProps } from "./index";
 import { TEMPLATE_IMAGES } from "@/elements/assets";
 
 export const webinarPreview: WebinarPageProps = {
-  brandName: "Flowstack",
+  brandName: "LaunchKit",
   eventLabel: "Product webinar",
   headline: "Building reliable product launches in 2026",
   subheadline:
@@ -11,7 +11,7 @@ export const webinarPreview: WebinarPageProps = {
   timeLabel: "10:00 AM PT · 45 minutes",
   locationLabel: "Live on Zoom · recording included",
   ctaLabel: "Register free",
-  ctaUrl: "https://flowstack.io/events/reliable-launches",
+  ctaUrl: "https://launchkit.io/events/reliable-launches",
   speakerImageUrl: TEMPLATE_IMAGES.pageWebinarSpeaker,
   takeaways: [
     {
@@ -38,7 +38,7 @@ export const webinarPreview: WebinarPageProps = {
     },
     {
       time: "0:12",
-      title: "The Flowstack launch model",
+      title: "The LaunchKit launch model",
       detail: "A four-phase checklist from freeze to follow-up, with owner templates.",
     },
     {
@@ -54,7 +54,7 @@ export const webinarPreview: WebinarPageProps = {
   ],
   speaker: {
     name: "Jordan Ellis",
-    role: "Director of Product Marketing, Flowstack",
+    role: "Director of Product Marketing, LaunchKit",
     bio: "Jordan has led launch programs at three B2B SaaS companies and writes about product communication systems. They will share field-tested templates you can apply the same day.",
   },
 };

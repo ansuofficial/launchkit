@@ -30,5 +30,5 @@ export const changelogPreview: ChangelogEmailProps = {
     },
   ],
   ctaLabel: "View full changelog",
-  ctaUrl: "https://flowstack.io/changelog/v2-8-0",
+  ctaUrl: "https://launchkit.io/changelog/v2-8-0",
 };

@@ -39,7 +39,7 @@ export interface ProjectBriefDocumentProps {
 }
 
 export function ProjectBriefDocument({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   projectName,
   owner,
   status,

@@ -45,7 +45,7 @@ export interface WebinarPageProps {
  * Clean webinar landing: light shell, strong hero photo, scannable agenda.
  */
 export function WebinarPage({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   eventLabel = "Live webinar",
   headline,
   subheadline,

@@ -1,313 +1,458 @@
+import { cn } from "@/lib/utils";
+
 /**
- * Hero graphic inspired by the Gatsby-style signal wave:
- * flowing gradient path, floating craft icons, glowing dual mark.
+ * Hero product mockup: desktop email preview + mobile document preview.
+ * Mirrors LaunchKit (email & document templates). Static, no CTAs, no badges.
  */
-export function HeroIllustration() {
+export function HeroIllustration({ className }: { className?: string }) {
   return (
     <div
-      className="relative mx-auto w-full max-w-[540px] overflow-visible lg:max-w-none"
+      className={cn("relative w-full select-none", className)}
       aria-hidden
     >
       <svg
-        viewBox="0 0 560 340"
+        viewBox="0 0 560 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-auto w-full overflow-visible"
-        overflow="visible"
+        className="block h-auto w-full"
+        preserveAspectRatio="xMidYMid meet"
         role="img"
       >
-        <title>Templates flowing into LaunchKit</title>
+        <title>
+          LaunchKit preview: product launch email on desktop and welcome email on
+          mobile
+        </title>
 
         <defs>
-          <linearGradient
-            id="lk-wave"
-            x1="40"
-            y1="240"
-            x2="500"
-            y2="110"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#6D5EF7" />
-            <stop offset="45%" stopColor="#7B8CFF" />
-            <stop offset="100%" stopColor="#5EA8FF" />
-          </linearGradient>
-          <linearGradient
-            id="lk-wave-glow"
-            x1="40"
-            y1="240"
-            x2="500"
-            y2="110"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#6D5EF7" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#5EA8FF" stopOpacity="0.1" />
-          </linearGradient>
-          <radialGradient id="lk-mark-halo" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#8B7CFF" stopOpacity="0.35" />
-            <stop offset="45%" stopColor="#6D5EF7" stopOpacity="0.14" />
-            <stop offset="100%" stopColor="#6D5EF7" stopOpacity="0" />
-          </radialGradient>
           <filter
-            id="lk-mark-glow"
-            x="-60%"
-            y="-60%"
-            width="220%"
-            height="220%"
+            id="lk-hero-card"
+            x="-6%"
+            y="-6%"
+            width="112%"
+            height="116%"
           >
-            <feGaussianBlur stdDeviation="12" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
+            <feDropShadow
+              dx="0"
+              dy="10"
+              stdDeviation="14"
+              floodColor="#0A0A0F"
+              floodOpacity="0.08"
+            />
           </filter>
           <filter
-            id="lk-path-soft"
-            x="-20%"
-            y="-40%"
-            width="140%"
-            height="180%"
+            id="lk-hero-phone"
+            x="-8%"
+            y="-6%"
+            width="116%"
+            height="112%"
           >
-            <feGaussianBlur stdDeviation="8" />
+            <feDropShadow
+              dx="0"
+              dy="12"
+              stdDeviation="12"
+              floodColor="#0A0A0F"
+              floodOpacity="0.1"
+            />
           </filter>
+          <clipPath id="lk-hero-browser-clip">
+            <rect x="16" y="44" width="392" height="320" rx="14" />
+          </clipPath>
+          <clipPath id="lk-hero-phone-clip">
+            <rect x="384" y="56" width="156" height="316" rx="22" />
+          </clipPath>
         </defs>
 
-        {/* Soft ambient wash under the curve */}
-        <path
-          d="M36 248 C 110 248, 145 88, 230 112 C 315 136, 330 250, 420 198 C 470 168, 500 138, 528 128"
-          stroke="url(#lk-wave-glow)"
-          strokeWidth="36"
-          strokeLinecap="round"
-          filter="url(#lk-path-soft)"
-          opacity="0.9"
-        />
-
-        {/* Main signal wave */}
-        <path
-          d="M36 248 C 110 248, 145 88, 230 112 C 315 136, 330 250, 420 198 C 470 168, 500 138, 528 128"
-          stroke="url(#lk-wave)"
-          strokeWidth="3.25"
-          strokeLinecap="round"
-          className="lk-hero-path"
-        />
-
-        {/* Start node */}
-        <circle cx="36" cy="248" r="5.5" fill="#6D5EF7" />
-        <circle
-          cx="36"
-          cy="248"
-          r="11"
-          stroke="#6D5EF7"
-          strokeWidth="1.5"
-          opacity="0.28"
-        />
-
-        {/* End node (feeds into mark) */}
-        <circle cx="528" cy="128" r="4" fill="#5EA8FF" />
-
-        {/* -- Floating monoline craft icons -- */}
-
-        {/* Code brackets */}
-        <g transform="translate(78 138)" opacity="0.88">
-          <path
-            d="M9 3 L2 16 L9 29"
-            stroke="#6D5EF7"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M17 3 L24 16 L17 29"
-            stroke="#6D5EF7"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {/* Envelope */}
-        <g transform="translate(142 52)" opacity="0.85">
+        {/* Browser: /preview/email/product-launch */}
+        <g filter="url(#lk-hero-card)">
           <rect
-            x="0.5"
-            y="3"
-            width="26"
-            height="17"
-            rx="2.5"
-            stroke="#8B7CFF"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M1 5.5 L13.5 14 L26 5.5"
-            stroke="#8B7CFF"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {/* Document */}
-        <g transform="translate(198 168)" opacity="0.85">
-          <path
-            d="M4 0.5 H16 L24 8.5 V26 H4 Z"
-            stroke="#5EA8FF"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-          <path d="M16 0.5 V8.5 H24" stroke="#5EA8FF" strokeWidth="1.5" />
-          <line
-            x1="8"
-            y1="13"
-            x2="20"
-            y2="13"
-            stroke="#5EA8FF"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-          />
-          <line
-            x1="8"
-            y1="17.5"
-            x2="17"
-            y2="17.5"
-            stroke="#5EA8FF"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-          />
-        </g>
-
-        {/* Layout / window */}
-        <g transform="translate(268 48)" opacity="0.82">
-          <rect
-            x="0.5"
-            y="0.5"
-            width="24"
-            height="22"
-            rx="2.5"
-            stroke="#6D5EF7"
-            strokeWidth="1.5"
-          />
-          <line x1="0.5" y1="7.5" x2="24.5" y2="7.5" stroke="#6D5EF7" strokeWidth="1.25" />
-          <line x1="9" y1="7.5" x2="9" y2="22.5" stroke="#6D5EF7" strokeWidth="1.25" />
-        </g>
-
-        {/* Cloud */}
-        <g transform="translate(318 218)" opacity="0.8">
-          <path
-            d="M7 18 H22 A6 6 0 0 0 22 6 A8.5 8.5 0 0 0 6 9.5 A5 5 0 0 0 7 18 Z"
-            stroke="#5EA8FF"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {/* Paper plane */}
-        <g transform="translate(362 108)" opacity="0.9">
-          <path
-            d="M1 12 L28 2 L13 23 L10.5 15.5 Z"
-            fill="#6D5EF7"
-            opacity="0.9"
-          />
-          <path
-            d="M10.5 15.5 L28 2"
-            stroke="white"
-            strokeWidth="1.1"
-            opacity="0.55"
-          />
-          <path
-            d="M10.5 15.5 L13 23"
-            stroke="white"
-            strokeWidth="1"
-            opacity="0.4"
-          />
-        </g>
-
-        {/* Check circle */}
-        <g transform="translate(102 228)" opacity="0.78">
-          <circle
-            cx="12"
-            cy="12"
-            r="11"
-            stroke="#5EA8FF"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M6.5 12.2 L10 15.5 L17.5 8"
-            stroke="#5EA8FF"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {/* Shield */}
-        <g transform="translate(410 228)" opacity="0.75">
-          <path
-            d="M12 1.5 L23 6.5 V13.5 C23 19.5 17.5 24 12 25.5 C6.5 24 1 19.5 1 13.5 V6.5 Z"
-            stroke="#8B7CFF"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M8 13 L11 16 L16.5 10"
-            stroke="#8B7CFF"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {/* -- Destination mark: Elements diamond × LaunchKit layers -- */}
-        <g transform="translate(430 48)" filter="url(#lk-mark-glow)">
-          <circle cx="58" cy="58" r="72" fill="url(#lk-mark-halo)" />
-          <circle cx="58" cy="58" r="54" fill="#6D5EF7" opacity="0.08" />
-
-          {/* Soft white badge */}
-          <circle
-            cx="58"
-            cy="58"
-            r="46"
-            fill="white"
+            x="16"
+            y="20"
+            width="392"
+            height="348"
+            rx="16"
+            fill="#FFFFFF"
             stroke="#E8EAEF"
             strokeWidth="1"
           />
+          <rect x="16" y="20" width="392" height="28" rx="16" fill="#FAFBFC" />
+          <rect x="16" y="36" width="392" height="12" fill="#FAFBFC" />
+          <circle cx="36" cy="34" r="4.5" fill="#FF5F57" />
+          <circle cx="52" cy="34" r="4.5" fill="#FEBC2E" />
+          <circle cx="68" cy="34" r="4.5" fill="#28C840" />
+          <rect x="100" y="26" width="224" height="16" rx="8" fill="#F3F4F6" />
+          <text
+            x="212"
+            y="37"
+            textAnchor="middle"
+            fill="#6B7280"
+            fontFamily="Inter, system-ui, sans-serif"
+            fontSize="8"
+            fontWeight="500"
+          >
+            launchkit.dev / preview / email / product-launch
+          </text>
 
-          {/* Teal “Elements” diamond (left, slightly behind) */}
-          <g transform="translate(24 32)">
-            <path d="M22 0 L40 18 L22 36 L4 18 Z" fill="#3ECFCF" />
+          <g clipPath="url(#lk-hero-browser-clip)">
+            <rect x="16" y="48" width="392" height="316" fill="#F4F5F7" />
+
+            {/* Email canvas */}
+            <rect
+              x="52"
+              y="60"
+              width="320"
+              height="292"
+              rx="8"
+              fill="#FFFFFF"
+              stroke="#E8EAEF"
+              strokeWidth="1"
+            />
+
+            {/* Brand header */}
+            <rect x="72" y="78" width="22" height="22" rx="6" fill="#1A1A1F" />
             <path
-              d="M22 8 L32 18 L22 28 L12 18 Z"
+              d="M83 84.5 L88 88 L83 91.5 L78 88 Z"
               fill="white"
               opacity="0.95"
             />
             <path
-              d="M22 14 L26 18 L22 22 L18 18 Z"
-              fill="#3ECFCF"
-              opacity="0.9"
+              d="M78 93 L83 96 L88 93"
+              stroke="white"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              opacity="0.85"
             />
-          </g>
+            <text
+              x="102"
+              y="93"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="12"
+              fontWeight="700"
+            >
+              LaunchKit
+            </text>
+            <text
+              x="352"
+              y="93"
+              textAnchor="end"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+              fontWeight="600"
+            >
+              EMAIL
+            </text>
 
-          {/* Purple LaunchKit mark (right, overlapping) */}
-          <g transform="translate(48 34)">
-            <circle cx="28" cy="24" r="26" fill="#6D5EF7" />
-            {/* White layered / spark mark */}
-            <path
-              d="M28 10 L40 18 L28 26 L16 18 Z"
-              fill="white"
-              opacity="0.98"
-            />
-            <path
-              d="M16 26 L28 34 L40 26"
-              stroke="white"
-              strokeWidth="2.25"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.9"
-            />
-            <path
-              d="M16 33 L28 41 L40 33"
-              stroke="white"
-              strokeWidth="2.25"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.45"
-            />
+            {/* Soft hero band (template media block, not a chart) */}
+            <rect x="72" y="112" width="280" height="64" rx="8" fill="#F0EEFC" />
+            <rect x="88" y="128" width="72" height="8" rx="4" fill="#6D5EF7" opacity="0.35" />
+            <rect x="88" y="144" width="120" height="6" rx="3" fill="#6D5EF7" opacity="0.18" />
+            <rect x="88" y="156" width="96" height="6" rx="3" fill="#6D5EF7" opacity="0.12" />
+            <rect x="248" y="124" width="88" height="40" rx="8" fill="#FFFFFF" opacity="0.7" />
+            <text
+              x="292"
+              y="142"
+              textAnchor="middle"
+              fill="#6D5EF7"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+              fontWeight="600"
+            >
+              Product Launch
+            </text>
+            <text
+              x="292"
+              y="154"
+              textAnchor="middle"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="7"
+            >
+              Template preview
+            </text>
+
+            <text
+              x="72"
+              y="202"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+              fontWeight="600"
+              letterSpacing="0.08em"
+            >
+              NEW RELEASE
+            </text>
+            <text
+              x="72"
+              y="224"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="15"
+              fontWeight="700"
+            >
+              Ship polished emails
+            </text>
+            <text
+              x="72"
+              y="242"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9.5"
+            >
+              Production-ready templates for modern software teams.
+            </text>
+            <text
+              x="72"
+              y="256"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9.5"
+            >
+              Built with Elements. Open source. Easy to customize.
+            </text>
+
+            {/* Template type cards (what LaunchKit ships) */}
+            <rect x="72" y="274" width="132" height="54" rx="8" fill="#F7F8FA" />
+            <text
+              x="84"
+              y="294"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="11"
+              fontWeight="700"
+            >
+              8 emails
+            </text>
+            <text
+              x="84"
+              y="310"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+            >
+              Launch · Welcome · Changelog
+            </text>
+            <text
+              x="84"
+              y="322"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+            >
+              Newsletter · Events · Security
+            </text>
+
+            <rect x="212" y="274" width="140" height="54" rx="8" fill="#F7F8FA" />
+            <text
+              x="224"
+              y="294"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="11"
+              fontWeight="700"
+            >
+              4 documents
+            </text>
+            <text
+              x="224"
+              y="310"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+            >
+              Proposal · Brief · Roadmap
+            </text>
+            <text
+              x="224"
+              y="322"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8"
+            >
+              Meeting summary
+            </text>
+          </g>
+        </g>
+
+        {/* Phone: /preview/email/welcome (mobile email) */}
+        <g filter="url(#lk-hero-phone)">
+          <rect
+            x="380"
+            y="48"
+            width="164"
+            height="332"
+            rx="28"
+            fill="#1A1A1F"
+          />
+          <rect
+            x="384"
+            y="56"
+            width="156"
+            height="316"
+            rx="24"
+            fill="#FFFFFF"
+          />
+          <rect x="430" y="64" width="64" height="9" rx="4.5" fill="#E8EAEF" />
+
+          <g clipPath="url(#lk-hero-phone-clip)">
+            <text
+              x="462"
+              y="100"
+              textAnchor="middle"
+              fill="#6D5EF7"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="11"
+              fontWeight="700"
+            >
+              LaunchKit
+            </text>
+            <text
+              x="462"
+              y="116"
+              textAnchor="middle"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="7.5"
+              fontWeight="600"
+              letterSpacing="0.06em"
+            >
+              WELCOME EMAIL
+            </text>
+
+            <text
+              x="400"
+              y="144"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="13"
+              fontWeight="700"
+            >
+              Welcome aboard
+            </text>
+            <text
+              x="400"
+              y="162"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8.5"
+            >
+              Start with a template that
+            </text>
+            <text
+              x="400"
+              y="174"
+              fill="#6B7280"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="8.5"
+            >
+              already looks production-ready.
+            </text>
+
+            {/* Steps = product workflow */}
+            <rect x="400" y="190" width="124" height="42" rx="8" fill="#F7F8FA" />
+            <text
+              x="412"
+              y="208"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9"
+              fontWeight="600"
+            >
+              01
+            </text>
+            <text
+              x="434"
+              y="208"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9.5"
+              fontWeight="600"
+            >
+              Browse templates
+            </text>
+            <text
+              x="434"
+              y="222"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="7.5"
+            >
+              Emails &amp; documents
+            </text>
+
+            <rect x="400" y="240" width="124" height="42" rx="8" fill="#F7F8FA" />
+            <text
+              x="412"
+              y="258"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9"
+              fontWeight="600"
+            >
+              02
+            </text>
+            <text
+              x="434"
+              y="258"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9.5"
+              fontWeight="600"
+            >
+              Open a preview
+            </text>
+            <text
+              x="434"
+              y="272"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="7.5"
+            >
+              Live render with Elements
+            </text>
+
+            <rect x="400" y="290" width="124" height="42" rx="8" fill="#F7F8FA" />
+            <text
+              x="412"
+              y="308"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9"
+              fontWeight="600"
+            >
+              03
+            </text>
+            <text
+              x="434"
+              y="308"
+              fill="#1A1A1F"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="9.5"
+              fontWeight="600"
+            >
+              Customize &amp; ship
+            </text>
+            <text
+              x="434"
+              y="322"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="7.5"
+            >
+              Props, copy, brand colors
+            </text>
+
+            {/* Footer meta (no button) */}
+            <text
+              x="462"
+              y="350"
+              textAnchor="middle"
+              fill="#9CA3AF"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontSize="7.5"
+            >
+              Built with Elements
+            </text>
           </g>
         </g>
       </svg>

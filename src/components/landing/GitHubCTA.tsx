@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Github, Star } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
@@ -24,7 +23,7 @@ export function GitHubCTA() {
               professional communication faster. MIT licensed.
             </p>
           </div>
-          <Link
+          <a
             href={SITE.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -32,7 +31,7 @@ export function GitHubCTA() {
           >
             <Github className="size-4" />
             View Repository
-          </Link>
+          </a>
         </div>
       </Container>
     </Section>

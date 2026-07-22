@@ -42,7 +42,7 @@ export interface NewsletterEmailProps {
 }
 
 export function NewsletterEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   edition,
   intro,
   articles,
@@ -85,7 +85,7 @@ export function NewsletterEmail({
             textAlign="left"
             lineHeight="1.3"
           >
-            This week at Flowstack
+            This week at LaunchKit
           </Heading>
           <Paragraph
             html={intro}

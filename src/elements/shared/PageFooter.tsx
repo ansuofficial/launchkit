@@ -51,7 +51,7 @@ const SOCIAL_LINKS = [
  * Light, minimal footer with monochrome social icons.
  */
 export function PageFooter({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   tagline = "Professional tools for modern software teams.",
   columns = DEFAULT_COLUMNS,
 }: PageFooterProps) {

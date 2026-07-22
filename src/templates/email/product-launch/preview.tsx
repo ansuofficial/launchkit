@@ -1,11 +1,11 @@
 import type { ProductLaunchEmailProps } from "./index";
 
 export const productLaunchPreview: ProductLaunchEmailProps = {
-  productName: "Flowstack Analytics",
+  productName: "LaunchKit Analytics",
   tagline: "Insights that keep your team in sync",
-  headline: "Introducing Flowstack Analytics",
+  headline: "Introducing LaunchKit Analytics",
   description:
-    "Turn product signals into clear decisions. Flowstack Analytics gives engineering and product leaders a single view of adoption, performance, and team health, without another dashboard to maintain.",
+    "Turn product signals into clear decisions. LaunchKit Analytics gives engineering and product leaders a single view of adoption, performance, and team health, without another dashboard to maintain.",
   features: [
     {
       title: "Real-time dashboards",
@@ -26,5 +26,5 @@ export const productLaunchPreview: ProductLaunchEmailProps = {
     { value: "4.9", label: "Avg. team rating" },
   ],
   ctaLabel: "Explore Analytics",
-  ctaUrl: "https://flowstack.io/analytics",
+  ctaUrl: "https://launchkit.io/analytics",
 };

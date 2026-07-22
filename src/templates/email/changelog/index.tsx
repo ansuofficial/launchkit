@@ -48,7 +48,7 @@ const TONE_PREFIX: Record<NonNullable<ChangelogSection["tone"]>, string> = {
 };
 
 export function ChangelogEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   version,
   releaseDate,
   summary,

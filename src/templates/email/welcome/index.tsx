@@ -35,7 +35,7 @@ export interface WelcomeEmailProps {
 }
 
 export function WelcomeEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   userName,
   headline,
   intro,
@@ -92,7 +92,7 @@ export function WelcomeEmail({
 
       <GraphicBlock
         src={TEMPLATE_IMAGES.welcomeTeam}
-        altText="Teams collaborating in Flowstack"
+        altText="Teams collaborating in LaunchKit"
         backgroundColor={EMAIL_ROW_BG}
         padding="16px 40px 8px"
       />
@@ -104,7 +104,7 @@ export function WelcomeEmail({
       >
         <Column>
           <Paragraph
-            html="Need help? Reply to this email or visit our <a href='https://flowstack.io/docs' style='color:#6D5EF7;text-decoration:none;'>documentation</a> anytime."
+            html="Need help? Reply to this email or visit our <a href='https://launchkit.io/docs' style='color:#6D5EF7;text-decoration:none;'>documentation</a> anytime."
             fontSize="14px"
             fontFamily={FONT_FAMILY}
             color={TEXT_MUTED}

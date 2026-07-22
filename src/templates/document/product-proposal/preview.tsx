@@ -7,7 +7,7 @@ export const productProposalPreview: ProductProposalDocumentProps = {
   date: "March 18, 2026",
   validUntil: "April 18, 2026",
   executiveSummary:
-    "This proposal outlines a 12-week engagement to deploy Flowstack Analytics for Northwind Labs, migrate historical metrics, and train product and engineering teams on dashboards, alerts, and reporting workflows.",
+    "This proposal outlines a 12-week engagement to deploy LaunchKit Analytics for Northwind Labs, migrate historical metrics, and train product and engineering teams on dashboards, alerts, and reporting workflows.",
   objectives: [
     "Centralize product and engineering metrics in a single analytics workspace",
     "Reduce weekly reporting effort by at least 40% through automated exports",
@@ -42,5 +42,5 @@ export const productProposalPreview: ProductProposalDocumentProps = {
   nextSteps:
     "Schedule a kickoff workshop, confirm data owners, and return a signed statement of work by April 4.",
   ctaLabel: "Schedule kickoff",
-  ctaUrl: "https://flowstack.io/proposals/northwind",
+  ctaUrl: "https://launchkit.io/proposals/northwind",
 };

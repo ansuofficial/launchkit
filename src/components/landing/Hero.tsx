@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Code2, Rocket, Shield, Zap } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { HeroIllustration } from "./HeroIllustration";
@@ -14,10 +15,14 @@ const trustPills = [
 
 export function Hero() {
   return (
-    <Section variant="light" className="overflow-visible pb-16 pt-12 md:pb-20 md:pt-16">
+    <Section
+      variant="light"
+      className="overflow-hidden pb-12 pt-10 md:pb-16 md:pt-14 lg:pb-20 lg:pt-16"
+    >
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-          <div className="max-w-xl">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-10">
+          {/* Copy column: stays clear of the illustration */}
+          <div className="relative z-10 max-w-xl lg:col-span-5">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
               <Zap className="size-3.5 fill-primary/20" aria-hidden />
               Build with Elements Challenge
@@ -36,8 +41,10 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                href="/templates"
+              <a
+                href={SITE.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-11 rounded-[12px] px-6 text-[15px]",
@@ -45,7 +52,7 @@ export function Hero() {
               >
                 Start Building
                 <ArrowRight className="size-4" />
-              </Link>
+              </a>
               <Link
                 href="/templates"
                 className={cn(
@@ -57,23 +64,24 @@ export function Hero() {
               </Link>
             </div>
 
-            <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <ul className="mt-8 flex flex-nowrap items-center gap-x-3 sm:gap-x-4">
               {trustPills.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
-                  className="flex items-center gap-2 text-sm font-medium text-muted-foreground"
+                  className="flex shrink-0 items-center gap-1.5 text-[11px] font-medium leading-none text-muted-foreground sm:text-xs"
                 >
-                  <span className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Icon className="size-3.5" aria-hidden />
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary sm:size-6">
+                    <Icon className="size-2.5 sm:size-3" aria-hidden />
                   </span>
-                  {label}
+                  <span className="whitespace-nowrap">{label}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="overflow-visible lg:justify-self-end">
-            <HeroIllustration />
+          {/* Illustration column: fills remaining hero width without covering copy */}
+          <div className="relative w-full lg:col-span-7">
+            <HeroIllustration className="block w-full max-w-none [&_svg]:h-auto [&_svg]:w-full [&_svg]:max-w-none" />
           </div>
         </div>
       </Container>

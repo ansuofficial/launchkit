@@ -38,7 +38,7 @@ export interface SecurityUpdateEmailProps {
 }
 
 export function SecurityUpdateEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   headline,
   severity,
   summary,

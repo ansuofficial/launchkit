@@ -277,26 +277,6 @@ body {
   background-color: var(--scrollbar-thumb-hover);
 }
 
-/* Hero illustration motion - subtle, once-drawn path + soft float */
-@keyframes lk-hero-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-2px);
-  }
-}
-
-@keyframes lk-hero-path {
-  0% {
-    stroke-dashoffset: 900;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes lk-marquee {
   from {
     transform: translateX(0);
@@ -306,40 +286,12 @@ body {
   }
 }
 
-.lk-hero-float {
-  animation: lk-hero-float 7s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Pulse / ring kept static - less visual noise */
-.lk-hero-pulse,
-.lk-hero-ring {
-  animation: none;
-}
-
-.lk-hero-path {
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  animation: lk-hero-path 1.9s ease-out forwards;
-}
-
-.lk-hero-mark {
-  animation: none;
-}
-
 .lk-marquee-track {
   animation: lk-marquee 40s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lk-hero-float,
-  .lk-hero-path,
   .lk-marquee-track {
     animation: none;
-  }
-
-  .lk-hero-path {
-    stroke-dashoffset: 0;
   }
 }

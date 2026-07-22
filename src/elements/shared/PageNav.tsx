@@ -38,10 +38,10 @@ const DEFAULT_ITEMS: PageNavItem[] = [
  * Stripe / Linear style. No stacked logo mark or heavy button chrome.
  */
 export function PageNav({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   items = DEFAULT_ITEMS,
   ctaLabel = "Start free",
-  ctaUrl = "https://flowstack.io/signup",
+  ctaUrl = "https://launchkit.io/signup",
   backgroundColor = PAGE_ROW_BG,
 }: PageNavProps) {
   const links = items

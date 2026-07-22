@@ -9,21 +9,21 @@ export const newsletterPreview: NewsletterEmailProps = {
       title: "How we cut deploy time by 40%",
       summary:
         "Our platform team rolled out parallel preview environments and smarter caching. Here is what changed, and what we learned along the way.",
-      readUrl: "https://flowstack.io/blog/deploy-time",
+      readUrl: "https://launchkit.io/blog/deploy-time",
     },
     {
       title: "Template library refresh",
       summary:
         "Twelve new email and document templates are live, built on Elements for consistent, production-ready output.",
-      readUrl: "https://flowstack.io/blog/templates",
+      readUrl: "https://launchkit.io/blog/templates",
     },
     {
       title: "Community spotlight: OpenCLI",
       summary:
-        "OpenCLI uses Flowstack to onboard 12,000 developers each month. Their team shares the playbook.",
-      readUrl: "https://flowstack.io/blog/opencli",
+        "OpenCLI uses LaunchKit to onboard 12,000 developers each month. Their team shares the playbook.",
+      readUrl: "https://launchkit.io/blog/opencli",
     },
   ],
   ctaLabel: "View all updates",
-  ctaUrl: "https://flowstack.io/changelog",
+  ctaUrl: "https://launchkit.io/changelog",
 };

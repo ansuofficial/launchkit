@@ -39,7 +39,7 @@ export interface ProductLaunchEmailProps {
 }
 
 export function ProductLaunchEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   productName,
   tagline,
   headline,

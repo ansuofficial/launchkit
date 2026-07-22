@@ -49,7 +49,7 @@ export interface PricingPageProps {
  * Premium pricing page: quiet tiers, clear hierarchy, light FAQ.
  */
 export function PricingPage({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   headline,
   subheadline,
   tiers,
@@ -71,7 +71,7 @@ export function PricingPage({
           { text: "Docs", href: "#docs" },
         ]}
         ctaLabel="Start free"
-        ctaUrl="https://flowstack.io/signup"
+        ctaUrl="https://launchkit.io/signup"
       />
 
       <Divider borderTopColor={BORDER_SUBTLE} borderTopWidth="1px" width="100%" />
@@ -322,7 +322,7 @@ export function PricingPage({
             Need a custom plan?
           </Heading>
           <Paragraph
-            html="We will map Flowstack to your stack, team size, and launch cadence in a short call."
+            html="We will map LaunchKit to your stack, team size, and launch cadence in a short call."
             fontSize="15px"
             fontFamily={FONT_FAMILY}
             color={TEXT_MUTED}
@@ -330,7 +330,7 @@ export function PricingPage({
             lineHeight="1.65"
           />
           <Button
-            href="https://flowstack.io/contact"
+            href="https://launchkit.io/contact"
             backgroundColor={TEXT_PRIMARY}
             color="#FFFFFF"
             fontSize="14px"

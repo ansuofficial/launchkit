@@ -36,7 +36,7 @@ export interface FeatureAnnouncementEmailProps {
 }
 
 export function FeatureAnnouncementEmail({
-  brandName = "Flowstack",
+  brandName = "LaunchKit",
   featureName,
   headline,
   description,
