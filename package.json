@@ -3,11 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "description": "Professional email & document templates for modern software teams",
+  "license": "MIT",
+  "author": "ansuofficial",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansuofficial/launchkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ansuofficial/launchkit/issues"
+  },
+  "homepage": "https://github.com/ansuofficial/launchkit#readme",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx scripts/smoke-render.ts",
     "export-html": "tsx scripts/export-html.ts"
   },
   "dependencies": {

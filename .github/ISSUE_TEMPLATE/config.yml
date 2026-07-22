@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Elements documentation
+    url: https://docs.unlayer.com/elements
+    about: Official Unlayer Elements docs for template authoring questions.
+  - name: Build With Elements Challenge
+    url: https://unlayer.com/elements
+    about: Challenge context and Elements product information.

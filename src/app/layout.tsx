@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Nav } from "@/components/landing/Nav";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LaunchKit — Professional Templates for Modern Teams",
+  title: "LaunchKit - Professional Templates for Modern Teams",
   description:
     "Premium open-source email and document templates built with Elements.",
 };
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", inter.variable)}>
       <body className="font-sans antialiased">
+        <Nav />
         {children}
       </body>
     </html>

@@ -27,9 +27,9 @@
   --lk-space-7: 96px;
 
   /* Radii */
-  --lk-radius-card: 20px;
-  --lk-radius-button: 14px;
-  --lk-radius-input: 12px;
+  --lk-radius-card: 12px;
+  --lk-radius-button: 12px;
+  --lk-radius-input: 10px;
 
   /* Layout */
   --lk-max-width: 1280px;

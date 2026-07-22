@@ -1,0 +1,72 @@
+name: Bug report
+description: Report a broken template, landing page issue, or build failure
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve LaunchKit. Fill in the sections below so we can reproduce the issue quickly.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Where did you hit the problem?
+      options:
+        - Landing page
+        - Template browse / preview
+        - Email template
+        - Document template
+        - Page template
+        - Build / CI
+        - Docs / README
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect instead?
+      placeholder: Clear, concise description of the bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps we can follow.
+      placeholder: |
+        1. Clone the repo and run `npm install`
+        2. Open `/preview/email/...`
+        3. See error...
+    validations:
+      required: true
+
+  - type: input
+    id: template-slug
+    attributes:
+      label: Template slug (if applicable)
+      placeholder: e.g. product-launch, meeting-summary
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Node version, browser (for UI bugs).
+      placeholder: |
+        OS: Windows 11
+        Node: 20.x
+        Browser: Chrome 130
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Paste relevant terminal output or attach screenshots.
+      render: shell

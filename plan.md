@@ -1,4 +1,4 @@
-# LaunchKit — Implementation Plan
+# LaunchKit - Implementation Plan
 
 > Step-by-step roadmap for building LaunchKit. Review this plan before starting application code.
 >
@@ -9,7 +9,7 @@
 
 ## Overview
 
-**Project:** LaunchKit — premium email & document templates for modern software teams  
+**Project:** LaunchKit - premium email & document templates for modern software teams  
 **Challenge:** Build With Elements Challenge 2026 (deadline: July 31, 2026)  
 **Stack:** Next.js 15 · TypeScript · shadcn/ui · Tailwind CSS · `@unlayer/react-elements`
 
@@ -20,7 +20,7 @@
 - 4 document templates
 - Professional GitHub README with screenshots and GIF
 
-**Visual target:** Reference screenshot layout — light hero, featured templates with section header, value props, dark preview gallery. **Exclude** the challenge sidebar (context only).
+**Visual target:** Reference screenshot layout - light hero, featured templates with section header, value props, dark preview gallery. **Exclude** the challenge sidebar (context only).
 
 ---
 
@@ -60,7 +60,7 @@ flowchart TB
 
 ---
 
-## Phase 0 — Project Foundation
+## Phase 0 - Project Foundation
 
 **Goal:** Runnable Next.js project with dependencies and folder scaffold.
 
@@ -76,7 +76,7 @@ flowchart TB
    npm install @unlayer/react-elements lucide-react
    ```
 
-3. Configure fonts via `next/font` — Inter (primary), optional Geist
+3. Configure fonts via `next/font` - Inter (primary), optional Geist
 
 4. Create folder structure per [Agents.md](./Agents.md#folder-structure)
 
@@ -114,14 +114,14 @@ Max width: `1280px` container.
 
 ---
 
-## Phase 1 — Design System in Code (shadcn/ui)
+## Phase 1 - Design System in Code (shadcn/ui)
 
 **Goal:** shadcn/ui configured with LaunchKit design tokens. No custom UI primitives.
 
 ### Tasks
 
-1. Create `src/styles/tokens.css` — CSS custom properties mirroring design system
-2. Create `src/styles/globals.css` — base resets + shadcn CSS variables mapped to LaunchKit tokens
+1. Create `src/styles/tokens.css` - CSS custom properties mirroring design system
+2. Create `src/styles/globals.css` - base resets + shadcn CSS variables mapped to LaunchKit tokens
 3. Initialize shadcn/ui:
    ```bash
    npx shadcn@latest init
@@ -152,7 +152,7 @@ Max width: `1280px` container.
 
 ---
 
-## Phase 2 — Shared Elements Foundation
+## Phase 2 - Shared Elements Foundation
 
 **Goal:** Reusable Elements blocks and render pipeline.
 
@@ -164,17 +164,17 @@ Max width: `1280px` container.
    // Accept React element, return HTML string
    ```
 
-2. Create `src/lib/templates.ts` — template registry
+2. Create `src/lib/templates.ts` - template registry
    ```typescript
    // { slug, name, category, type: 'email' | 'document', featured?: boolean }
    ```
 
 3. Build shared Elements blocks in `src/elements/shared/`:
-   - `BrandHeader.tsx` — logo area + optional tagline
-   - `FooterBlock.tsx` — links, unsubscribe, address
-   - `CTAButton.tsx` — purple CTA with consistent styling
-   - `DividerSection.tsx` — horizontal rule with spacing
-   - `FeatureList.tsx` — icon + text feature rows
+   - `BrandHeader.tsx` - logo area + optional tagline
+   - `FooterBlock.tsx` - links, unsubscribe, address
+   - `CTAButton.tsx` - purple CTA with consistent styling
+   - `DividerSection.tsx` - horizontal rule with spacing
+   - `FeatureList.tsx` - icon + text feature rows
 
 4. Create minimal proof-of-concept email at `src/templates/email/hello/index.tsx`
 
@@ -199,7 +199,7 @@ Max width: `1280px` container.
 
 ---
 
-## Phase 3 — Landing Page
+## Phase 3 - Landing Page
 
 **Goal:** Full landing page matching reference screenshot layout.
 
@@ -219,12 +219,12 @@ Max width: `1280px` container.
 - CTAs: "Start Building" (primary) + "View Templates" (secondary)
 - Trust pills: Open Source · Developer Friendly · Production Ready
 
-#### 3. Featured Templates (`FeaturedTemplates.tsx`) — **required structure**
+#### 3. Featured Templates (`FeaturedTemplates.tsx`) - **required structure**
 
 ```
 FeaturedSectionHeader
 ├── h2: "Featured Templates" (or similar)
-├── p:  1–2 sentence description
+├── p:  1-2 sentence description
 └── Button: "View on GitHub" + GitHub icon
 
 [48px gap]
@@ -275,7 +275,7 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 #### 7. GitHub CTA (`GitHubCTA.tsx`)
 
 - Full-width band (light or subtle purple tint)
-- Reinforces repo link — distinct from Featured header CTA
+- Reinforces repo link - distinct from Featured header CTA
 - Copy: e.g. "Star LaunchKit on GitHub" + button
 
 #### 8. Footer (`Footer.tsx`)
@@ -302,7 +302,7 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 | Breakpoint | Behavior |
 |------------|----------|
 | `< 768px` | Single column, stacked cards, reduced padding (48px sections) |
-| `768px – 1024px` | 2-column featured cards, 2-column value props |
+| `768px - 1024px` | 2-column featured cards, 2-column value props |
 | `> 1024px` | Full layout, 1280px max container |
 
 ### Checkpoint
@@ -316,7 +316,7 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 
 ---
 
-## Phase 4 — Email Templates (8)
+## Phase 4 - Email Templates (8)
 
 **Goal:** Production-ready email templates using Elements.
 
@@ -358,7 +358,7 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 
 ---
 
-## Phase 5 — Document Templates (4)
+## Phase 5 - Document Templates (4)
 
 **Goal:** Production-ready document templates using `<Document>` wrapper.
 
@@ -386,7 +386,7 @@ Same as Phase 4, but:
 
 ---
 
-## Phase 6 — Template Browse Page
+## Phase 6 - Template Browse Page
 
 **Goal:** `/templates` page for browsing by category.
 
@@ -409,9 +409,11 @@ Same as Phase 4, but:
 
 ---
 
-## Phase 7 — GitHub Repository Polish
+## Phase 7 - GitHub Repository Polish
 
 **Goal:** Exceptional GitHub presentation per [prd.md](./prd.md#github-readme).
+
+**Remote:** `https://github.com/ansuofficial/launchkit.git`
 
 ### Tasks
 
@@ -427,7 +429,7 @@ Same as Phase 4, but:
    - Acknowledgements to Elements / Unlayer
    - Challenge hashtag: `#BuiltWithElements`
 
-2. Create `scripts/export-html.ts` — batch export all templates to `public/exports/`
+2. Create `scripts/export-html.ts` - batch export all templates to `public/exports/`
 
 3. Capture assets:
    - Landing page screenshot (1280px and mobile)
@@ -436,16 +438,28 @@ Same as Phase 4, but:
 
 4. Final `package.json` metadata (name, description, repository, license)
 
+5. Open-source GitHub workflow (standard OSS):
+   - CI: `.github/workflows/ci.yml` (lint, typecheck, smoke, build)
+   - Dependabot: `.github/dependabot.yml`
+   - Community: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`
+   - Issue templates + PR template under `.github/`
+   - Fork → branch → PR against `main`; keep CI green
+
 ### Checkpoint
 
+- [x] OSS workflow files present (CI, Dependabot, CONTRIBUTING, CoC, SECURITY, issue/PR templates)
+- [x] `package.json` has repository, license, engines, typecheck/smoke scripts
+- [x] Starter README with quick start and badges
+- [ ] README gallery assets (hero, screenshots, GIF) complete
 - [ ] README renders correctly on GitHub
 - [ ] All screenshots are high quality (2x)
 - [ ] GIF demonstrates the full flow
 - [ ] Installation instructions work on fresh clone
+- [ ] Repo public and default branch `main` protected (require CI on PRs)
 
 ---
 
-## Phase 8 — Quality Assurance & Submission
+## Phase 8 - Quality Assurance & Submission
 
 **Goal:** Final polish and challenge submission.
 
@@ -486,16 +500,16 @@ Same as Phase 4, but:
 
 | Phase | Estimated effort |
 |-------|------------------|
-| Phase 0 — Foundation | 2–3 hours |
-| Phase 1 — Design system | 3–4 hours |
-| Phase 2 — Elements foundation | 3–4 hours |
-| Phase 3 — Landing page | 6–8 hours |
-| Phase 4 — Email templates | 12–16 hours |
-| Phase 5 — Document templates | 8–10 hours |
-| Phase 6 — Browse page | 2–3 hours |
-| Phase 7 — GitHub polish | 4–6 hours |
-| Phase 8 — QA & submission | 2–3 hours |
-| **Total** | **~42–57 hours** |
+| Phase 0 - Foundation | 2-3 hours |
+| Phase 1 - Design system | 3-4 hours |
+| Phase 2 - Elements foundation | 3-4 hours |
+| Phase 3 - Landing page | 6-8 hours |
+| Phase 4 - Email templates | 12-16 hours |
+| Phase 5 - Document templates | 8-10 hours |
+| Phase 6 - Browse page | 2-3 hours |
+| Phase 7 - GitHub polish | 4-6 hours |
+| Phase 8 - QA & submission | 2-3 hours |
+| **Total** | **~42-57 hours** |
 
 ---
 
@@ -509,7 +523,7 @@ Do not proceed to the next phase until the current phase checkpoint is complete.
 | 1 | Do primitives match design-system.md? |
 | 2 | Does Elements rendering work? |
 | 3 | Does the landing page match the screenshot layout? |
-| 4–5 | Are templates presentation-ready? |
+| 4-5 | Are templates presentation-ready? |
 | 6 | Can users browse all templates? |
 | 7 | Would you star this repo on GitHub? |
 | 8 | Ready to submit? |
@@ -520,12 +534,12 @@ Do not proceed to the next phase until the current phase checkpoint is complete.
 
 This plan was produced following:
 
-1. [Agents.md](./Agents.md) — standards and rules (written first)
-2. [plan.md](./plan.md) — this file (written second)
-3. Application code — begins at Phase 0 after plan review
+1. [Agents.md](./Agents.md) - standards and rules (written first)
+2. [plan.md](./plan.md) - this file (written second)
+3. Application code - begins at Phase 0 after plan review
 
 ---
 
 ## Next Step
 
-Begin **Phase 0 — Project Foundation** once this plan is approved. Follow [Agents.md](./Agents.md) for all implementation decisions.
+Begin **Phase 0 - Project Foundation** once this plan is approved. Follow [Agents.md](./Agents.md) for all implementation decisions.

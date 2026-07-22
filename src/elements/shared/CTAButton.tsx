@@ -6,6 +6,9 @@ interface CTAButtonProps {
   label: string;
   align?: "left" | "center" | "right";
   padding?: string;
+  backgroundColor?: string;
+  buttonColor?: string;
+  textColor?: string;
 }
 
 export function CTAButton({
@@ -13,18 +16,21 @@ export function CTAButton({
   label,
   align = "center",
   padding = "8px 40px 40px",
+  backgroundColor = "#FFFFFF",
+  buttonColor = ACCENT_PURPLE,
+  textColor = "#FFFFFF",
 }: CTAButtonProps) {
   return (
     <Row
       layout={ColumnLayouts.OneColumn}
-      backgroundColor="#FFFFFF"
+      backgroundColor={backgroundColor}
       padding={padding}
     >
       <Column>
         <Button
           href={href}
-          backgroundColor={ACCENT_PURPLE}
-          color="#FFFFFF"
+          backgroundColor={buttonColor}
+          color={textColor}
           fontSize="14px"
           fontWeight={600}
           fontFamily={FONT_FAMILY}

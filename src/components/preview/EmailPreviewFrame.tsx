@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { preparePreviewHtml } from "@/lib/preview-html";
 import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -18,15 +19,17 @@ export function EmailPreviewFrame({
   category,
   html,
 }: EmailPreviewFrameProps) {
+  const previewHtml = preparePreviewHtml(html);
+
   return (
-    <div className="min-h-screen bg-muted/40 p-6">
+    <div className="min-h-[calc(100vh-4.5rem)] bg-muted/40 p-6">
       <div className="mx-auto max-w-4xl space-y-4">
         <Link
-          href="/"
+          href="/templates"
           className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
         >
           <ArrowLeft className="mr-2 size-4" />
-          Back
+          Open template library
         </Link>
 
         <Card>
@@ -37,9 +40,10 @@ export function EmailPreviewFrame({
           <CardContent className="p-0">
             <iframe
               title={`${name} preview`}
-              srcDoc={html}
+              srcDoc={previewHtml}
               className="h-[720px] w-full border-0"
-              sandbox="allow-same-origin"
+              sandbox="allow-same-origin allow-scripts"
+              referrerPolicy="no-referrer"
             />
           </CardContent>
         </Card>

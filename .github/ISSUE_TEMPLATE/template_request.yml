@@ -1,0 +1,55 @@
+name: Template request
+description: Request a specific email, document, or page template
+title: "[Template]: "
+labels: ["template-request"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Template type
+      options:
+        - Email
+        - Document
+        - Page
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Proposed name
+      placeholder: e.g. Password Reset, Quarterly Report
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Product
+        - Marketing
+        - Business
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: When would a team send or share this template?
+    validations:
+      required: true
+
+  - type: textarea
+    id: sections
+    attributes:
+      label: Suggested sections
+      description: Outline the content blocks (header, CTA, pricing table, etc.).
+      placeholder: |
+        - Brand header
+        - Hero headline
+        - Feature list
+        - Primary CTA
+        - Footer with unsubscribe

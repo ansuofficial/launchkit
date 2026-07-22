@@ -155,12 +155,19 @@ body {
   --radius: 0.875rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  /* Align sidebar active / focus with LaunchKit primary */
+  --sidebar-primary: oklch(0.58 0.2 277);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-accent: oklch(0.96 0.02 277);
+  --sidebar-accent-foreground: oklch(0.42 0.16 277);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(0.58 0.2 277);
+
+  /* Subtle scrollbars */
+  --scrollbar-size: 8px;
+  --scrollbar-thumb: color-mix(in srgb, var(--lk-text-muted) 28%, transparent);
+  --scrollbar-thumb-hover: color-mix(in srgb, var(--lk-accent) 45%, transparent);
+  --scrollbar-track: transparent;
 }
 
 .dark {
@@ -189,12 +196,16 @@ body {
   --chart-5: oklch(0.269 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.58 0.2 277);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.28 0.05 277);
+  --sidebar-accent-foreground: oklch(0.85 0.08 277);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-ring: oklch(0.58 0.2 277);
+
+  --scrollbar-thumb: color-mix(in srgb, #ffffff 18%, transparent);
+  --scrollbar-thumb-hover: color-mix(in srgb, var(--lk-accent) 55%, transparent);
+  --scrollbar-track: transparent;
 }
 
 @layer base {
@@ -206,5 +217,129 @@ body {
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Subtle, theme-matched scrollbars (Firefox + WebKit) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Prefer soft scrollbars inside templates shell / sidebar */
+.lk-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important;
+}
+
+.lk-scrollbar::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+  height: 6px;
+}
+
+.lk-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lk-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+.lk-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+/* Hero illustration motion - subtle, once-drawn path + soft float */
+@keyframes lk-hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes lk-hero-path {
+  0% {
+    stroke-dashoffset: 900;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lk-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.lk-hero-float {
+  animation: lk-hero-float 7s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Pulse / ring kept static - less visual noise */
+.lk-hero-pulse,
+.lk-hero-ring {
+  animation: none;
+}
+
+.lk-hero-path {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: lk-hero-path 1.9s ease-out forwards;
+}
+
+.lk-hero-mark {
+  animation: none;
+}
+
+.lk-marquee-track {
+  animation: lk-marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lk-hero-float,
+  .lk-hero-path,
+  .lk-marquee-track {
+    animation: none;
+  }
+
+  .lk-hero-path {
+    stroke-dashoffset: 0;
   }
 }

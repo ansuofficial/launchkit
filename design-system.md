@@ -80,13 +80,13 @@ Alternative
 Geist
 
 Headings:
-700–800 weight
+700-800 weight
 
 Body:
-400–500 weight
+400-500 weight
 
 Line height:
-150–170%
+150-170%
 
 ---
 
@@ -212,4 +212,4 @@ Every sentence should add value.
 
 # Overall Design Goal
 
-If someone saw LaunchKit without context, they should assume it is an official product from a world-class software company—not because it is flashy, but because every detail feels intentional.
+If someone saw LaunchKit without context, they should assume it is an official product from a world-class software company, not because it is flashy, but because every detail feels intentional.

@@ -1,3 +1,4 @@
+export { BackboneSection } from "./BackboneSection";
 export { Container } from "./Container";
 export { FeaturedSectionHeader } from "./FeaturedSectionHeader";
 export { FeaturedTemplateCard } from "./FeaturedTemplateCard";
@@ -6,9 +7,11 @@ export { Footer } from "./Footer";
 export { GalleryTemplateCard } from "./GalleryTemplateCard";
 export { GitHubCTA } from "./GitHubCTA";
 export { Hero } from "./Hero";
+export { HeroIllustration } from "./HeroIllustration";
+export { JellyNetwork } from "./JellyNetwork";
 export { Nav } from "./Nav";
 export { PreviewGallery } from "./PreviewGallery";
 export { Section } from "./Section";
 export { TemplatePreview } from "./TemplatePreview";
+export { TiltMedia } from "./TiltMedia";
 export { TrustRow } from "./TrustRow";
-export { WhyLaunchKit } from "./WhyLaunchKit";

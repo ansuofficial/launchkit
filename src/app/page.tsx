@@ -1,23 +1,21 @@
 import {
+  BackboneSection,
   FeaturedTemplates,
   Footer,
   GitHubCTA,
   Hero,
-  Nav,
   PreviewGallery,
   TrustRow,
-  WhyLaunchKit,
 } from "@/components/landing";
 
 export default function Home() {
   return (
     <>
-      <Nav />
       <main>
         <Hero />
-        <FeaturedTemplates />
-        <WhyLaunchKit />
+        <BackboneSection />
         <TrustRow />
+        <FeaturedTemplates />
         <PreviewGallery />
         <GitHubCTA />
       </main>

@@ -1,0 +1,56 @@
+name: Feature request
+description: Suggest a new template, landing improvement, or developer experience change
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        LaunchKit is a template library and landing presentation only. We do **not** add auth, backends, dashboards, CMS, or AI generation. See [Agents.md](../../Agents.md) non-goals.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New email template
+        - New document template
+        - New page template
+        - Shared Elements block
+        - Landing / browse UI
+        - Developer tooling / CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What gap does this fill for software teams?
+      placeholder: Teams need a clean template for...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should LaunchKit add or change?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches or existing templates that almost work.
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This request stays within LaunchKit non-goals (no auth, backend, AI, CMS, or database)
+          required: true

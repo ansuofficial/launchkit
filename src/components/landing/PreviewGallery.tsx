@@ -12,12 +12,12 @@ export function PreviewGallery() {
             Built with LaunchKit
           </h2>
           <p className="mt-4 text-lg text-white/60">
-            Real templates for email and documents—consistent, practical, and
+            Real templates for email and documents: consistent, practical, and
             ready for production.
           </p>
         </div>
 
-        <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {templates.map((template) => (
             <GalleryTemplateCard key={`${template.type}-${template.slug}`} template={template} />
           ))}

@@ -16,11 +16,12 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="space-y-3">
-            <Link href="/" className="flex items-center gap-2 font-semibold">
-              <span className="flex size-7 items-center justify-center rounded-md bg-primary text-primary-foreground">
-                <Layers className="size-3.5" />
-              </span>
-              {SITE.name}
+            <Link
+              href="/"
+              aria-label={`${SITE.name} home`}
+              className="inline-flex size-8 items-center justify-center rounded-[10px] bg-primary text-primary-foreground transition-opacity duration-200 hover:opacity-90"
+            >
+              <Layers className="size-3.5" aria-hidden />
             </Link>
             <p className="max-w-xs text-sm text-muted-foreground">
               Built with{" "}

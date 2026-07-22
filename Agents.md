@@ -1,4 +1,4 @@
-# Agents.md — LaunchKit Agent Guidance
+# Agents.md - LaunchKit Agent Guidance
 
 > **Read this file before writing any code.** It defines how AI agents and contributors must maintain standards for the LaunchKit project.
 
@@ -15,6 +15,13 @@ Always read these before starting work:
 
 ---
 
+## Rule 1. Do not use em dashes (m-dashes)
+
+Never use em dashes (`—`) or en dashes (`–`) in copy, comments, or documentation.
+
+- Prefer commas, periods, colons, parentheses, or a plain hyphen (`-`) only for ranges or compound words.
+- If an em dash appears anywhere in the project, remove it.
+
 ## Project Identity
 
 **Name:** LaunchKit  
@@ -23,7 +30,7 @@ Always read these before starting work:
 
 **Challenge:** Build With Elements Challenge 2026 (deadline: July 31, 2026)
 
-**Purpose:** A premium open-source collection of production-ready email and document templates built with [Elements](https://unlayer.com/elements) (`@unlayer/react-elements`). LaunchKit is a cohesive design system—not isolated one-off templates.
+**Purpose:** A premium open-source collection of production-ready email and document templates built with [Elements](https://unlayer.com/elements) (`@unlayer/react-elements`). LaunchKit is a cohesive design system, not isolated one-off templates.
 
 **Vision:** Templates should feel like they belong at Stripe, Linear, Vercel, Notion, Apple, or Raycast. Clarity and timeless design over decorative effects.
 
@@ -55,7 +62,7 @@ The focus is **template quality** and **landing page presentation** only.
 | Framework | Next.js 15 (App Router) | Landing page, preview routes |
 | Language | TypeScript (strict) | Entire codebase |
 | Landing UI | **shadcn/ui** + Tailwind CSS | All web UI components (default) |
-| Icons | Lucide React | Line icons only—no filled sets |
+| Icons | Lucide React | Line icons only, no filled sets |
 | Fonts | Inter (primary), Geist (alternative) | Via `next/font` |
 | Version control | GitHub | Public repo, MIT license |
 
@@ -74,9 +81,9 @@ The focus is **template quality** and **landing page presentation** only.
 - Shared blocks in `src/elements/shared/` that compose into templates
 - `renderToHtml()` / `renderToPlainText()` output
 
-**Do not** build custom landing UI primitives when a shadcn component exists. Extend shadcn via `className` and design tokens—not bespoke Button/Card implementations.
+**Do not** build custom landing UI primitives when a shadcn component exists. Extend shadcn via `className` and design tokens, not bespoke Button/Card implementations.
 
-**Link + Button pattern:** This project uses shadcn base-nova (`@base-ui/react`). For navigation buttons, use `buttonVariants()` with Next.js `<Link>` — not `asChild`.
+**Link + Button pattern:** This project uses shadcn base-nova (`@base-ui/react`). For navigation buttons, use `buttonVariants()` with Next.js `<Link>` - not `asChild`.
 
 ```tsx
 import Link from "next/link";
@@ -88,7 +95,7 @@ import { cn } from "@/lib/utils";
 </Link>
 ```
 
-**Critical rule:** Tailwind and shadcn classes are for the **web app only**. Email and document templates use Elements props and inline styles—never Tailwind or shadcn inside `<Email>` or `<Document>` trees.
+**Critical rule:** Tailwind and shadcn classes are for the **web app only**. Email and document templates use Elements props and inline styles. Never use Tailwind or shadcn inside `<Email>` or `<Document>` trees.
 
 ---
 
@@ -222,9 +229,9 @@ Gradients: use sparingly, only to reinforce focus.
 
 ### Typography
 
-- Headings: 700–800 weight
-- Body: 400–500 weight
-- Line height: 150–170%
+- Headings: 700-800 weight
+- Body: 400-500 weight
+- Line height: 150-170%
 - Typography carries hierarchy before color
 
 ### Spacing
@@ -247,7 +254,7 @@ Use only: `8, 16, 24, 32, 48, 64, 96` (px). No arbitrary values like `13px` or `
 
 - Allowed: fade, scale, slide
 - Max duration: `250ms`
-- Animations support usability—never distract
+- Animations support usability; never distract
 
 ### Icons
 
@@ -270,7 +277,7 @@ The landing page uses a **full-width layout** with:
 
 - **Light sections** (hero, featured, value props, trust row): white / off-white backgrounds
 - **Dark section** (preview gallery): `#08090F` background
-- **No challenge sidebar** — the dark right panel in the reference image is challenge context, not part of LaunchKit UI
+- **No challenge sidebar** - the dark right panel in the reference image is challenge context, not part of LaunchKit UI
 
 ### Section order (from PRD IA)
 
@@ -285,12 +292,12 @@ The landing page uses a **full-width layout** with:
 
 ### Featured Templates section (required structure)
 
-The Featured Templates block **must** include three parts—in this order:
+The Featured Templates block **must** include three parts, in this order:
 
 ```
 1. SectionHeader
    ├── Title (h2)
-   ├── Description (1–2 sentences)
+   ├── Description (1-2 sentences)
    └── GitHub CTA button ("View on GitHub" + GitHub icon)
 
 2. Showcase card grid (2 columns desktop, 1 column mobile)
@@ -301,9 +308,9 @@ The Featured Templates block **must** include three parts—in this order:
 **Rules:**
 
 - Never show showcase cards without the section header above them
-- GitHub CTA must appear in the Featured section header—not only in the footer
+- GitHub CTA must appear in the Featured section header, not only in the footer
 - GitHub CTA also appears in a dedicated bottom CTA band (two placements total)
-- Section header copy: professional, concise—no marketing hype
+- Section header copy: professional, concise, no marketing hype
 - Gap between header block and card grid: `48px`
 - Section padding: `64px` vertical
 
@@ -332,7 +339,7 @@ Before marking any template complete, verify:
 - [ ] Uses correct root wrapper (`<Email>` or `<Document>`)
 - [ ] Follows Row → Column → content hierarchy
 - [ ] Uses shared components from `src/elements/shared/` where applicable
-- [ ] Realistic copy—no lorem ipsum, no "TODO" placeholders
+- [ ] Realistic copy: no lorem ipsum, no "TODO" placeholders
 - [ ] Consistent spacing (8pt rhythm)
 - [ ] Colors from design system only
 - [ ] `renderToHtml()` produces valid output without errors
@@ -370,14 +377,14 @@ Before marking any template complete, verify:
 
 ## Code Quality Rules
 
-1. **Focused diffs** — only modify code required by the task; no drive-by refactors
-2. **Match existing patterns** — naming, imports, file structure
-3. **No decorative clutter** — every pixel has a reason
-4. **No placeholder layouts** — every section must look intentional
-5. **No inconsistent spacing** — stick to the spacing scale
-6. **No random colors** — design system tokens only
-7. **TypeScript strict** — no `any` unless absolutely necessary with a comment explaining why
-8. **Reusable over duplicated** — extend shared components, don't copy-paste
+1. **Focused diffs** - only modify code required by the task; no drive-by refactors
+2. **Match existing patterns** - naming, imports, file structure
+3. **No decorative clutter** - every pixel has a reason
+4. **No placeholder layouts** - every section must look intentional
+5. **No inconsistent spacing** - stick to the spacing scale
+6. **No random colors** - design system tokens only
+7. **TypeScript strict** - no `any` unless absolutely necessary with a comment explaining why
+8. **Reusable over duplicated** - extend shared components, don't copy-paste
 
 ---
 
