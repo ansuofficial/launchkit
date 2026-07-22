@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Layers } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { SITE } from "@/lib/site";
+import { BrandLogo } from "./BrandLogo";
 import { Container } from "./Container";
 
 const footerLinks = [
@@ -20,9 +20,9 @@ export function Footer() {
             <Link
               href="/"
               aria-label={`${SITE.name} home`}
-              className="inline-flex size-8 items-center justify-center rounded-[10px] bg-primary text-primary-foreground transition-opacity duration-200 hover:opacity-90"
+              className="inline-flex size-8 items-center justify-center rounded-[10px] transition-opacity duration-200 hover:opacity-90"
             >
-              <Layers className="size-3.5" aria-hidden />
+              <BrandLogo size={32} />
             </Link>
             <p className="max-w-xs text-sm text-muted-foreground">
               Built with{" "}

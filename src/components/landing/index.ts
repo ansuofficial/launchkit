@@ -1,4 +1,5 @@
 export { BackboneSection } from "./BackboneSection";
+export { BrandLogo } from "./BrandLogo";
 export { Container } from "./Container";
 export { FeaturedSectionHeader } from "./FeaturedSectionHeader";
 export { FeaturedTemplateCard } from "./FeaturedTemplateCard";

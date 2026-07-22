@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Layers } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "./BrandLogo";
 import { Container } from "./Container";
 
 /**
@@ -20,9 +20,9 @@ export function Nav() {
           <Link
             href="/"
             aria-label={`${SITE.name} home`}
-            className="flex size-9 items-center justify-center rounded-[10px] bg-primary text-primary-foreground shadow-sm shadow-primary/25 transition-opacity duration-200 hover:opacity-90"
+            className="inline-flex size-9 items-center justify-center rounded-[10px] shadow-sm shadow-black/10 transition-opacity duration-200 hover:opacity-90"
           >
-            <Layers className="size-4" aria-hidden />
+            <BrandLogo size={36} priority />
           </Link>
 
           <div className="flex items-center gap-2">
