@@ -44,3 +44,6 @@ next-env.d.ts
 
 # terminals
 /terminals
+
+# Local agent / MCP tooling (not part of LaunchKit)
+/mcps

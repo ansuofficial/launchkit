@@ -102,65 +102,48 @@ import { cn } from "@/lib/utils";
 ## Folder Structure
 
 ```
-elements-challenge/
+launchkit/
 ├── Agents.md                 # This file
-├── plan.md                   # Implementation roadmap
-├── prd.md
-├── pid.md
+├── README.md                 # Product + developer entrypoint
+├── CONTRIBUTING.md
+├── CHANGELOG.md
 ├── design-system.md
-├── README.md
-├── LICENSE
+├── plan.md / prd.md / pid.md
+├── docs/                     # Audits and long-form notes
 ├── public/
 │   └── images/               # Screenshots, hero assets, template previews
 ├── scripts/
-│   └── export-html.ts        # Generate static HTML for README assets
+│   ├── export-html.ts        # Batch static HTML export
+│   └── smoke-render.ts       # CI smoke render of all templates
 └── src/
     ├── app/                  # Next.js App Router
-    │   ├── layout.tsx
     │   ├── page.tsx          # Landing page
-    │   ├── templates/
-    │   │   └── page.tsx      # Category browse
-    │   └── preview/
-    │       ├── email/[slug]/page.tsx
-    │       └── document/[slug]/page.tsx
+    │   ├── templates/        # Browse + /templates/[type]/[slug] preview
+    │   └── preview/          # Legacy redirects → /templates/...
     ├── components/
-    │   ├── ui/               # shadcn/ui primitives (Button, Card, Badge, etc.)
-    │   └── landing/          # Landing page sections (compose shadcn + Lucide)
-    │       ├── Nav.tsx
-    │       ├── Hero.tsx
-    │       ├── FeaturedSectionHeader.tsx
-    │       ├── FeaturedTemplateCard.tsx
-    │       ├── FeaturedTemplates.tsx
-    │       ├── WhyLaunchKit.tsx
-    │       ├── TrustRow.tsx
-    │       ├── PreviewGallery.tsx
-    │       ├── GitHubCTA.tsx
-    │       └── Footer.tsx
+    │   ├── ui/               # shadcn/ui primitives
+    │   ├── landing/          # Landing page sections
+    │   ├── templates/        # Browse + preview chrome
+    │   └── preview/          # Preview frame helpers
     ├── elements/
-    │   └── shared/           # Reusable Elements blocks
-    │       ├── BrandHeader.tsx
-    │       ├── FooterBlock.tsx
-    │       ├── CTAButton.tsx
-    │       ├── DividerSection.tsx
-    │       └── FeatureList.tsx
+    │   ├── shared/           # Reusable Elements blocks
+    │   └── assets/           # SVG / graphic helpers
     ├── templates/
-    │   ├── email/
-    │   │   └── <name>/
-    │   │       ├── index.tsx     # Elements component
-    │   │       └── preview.tsx   # Sample data / default props
-    │   └── document/
-    │       └── <name>/
-    │           ├── index.tsx
-    │           └── preview.tsx
+    │   ├── email/<slug>/     # index.tsx + preview.tsx
+    │   ├── document/<slug>/
+    │   └── page/<slug>/
     ├── lib/
-    │   ├── render.ts           # renderToHtml wrappers
-    │   └── templates.ts        # Template registry (slug, category, metadata)
+    │   ├── render.ts         # renderToHtml wrappers
+    │   ├── templates.ts      # Template registry
+    │   └── preview-html.ts   # Safe iframe preparation
     └── styles/
         ├── globals.css
-        └── tokens.css          # CSS variables from design-system.md
+        └── tokens.css
 ```
 
 Every new template gets its own folder. Never dump multiple templates into one file.
+
+Canonical preview URL: `/templates/<type>/<slug>`. Legacy `/preview/...` routes only redirect.
 
 ---
 
@@ -193,7 +176,7 @@ Elements is the **only** way to author email and document templates.
 
 - Export HTML via `renderToHtml()` from `@unlayer/react-elements`
 - Never hand-write HTML for templates
-- Preview routes call `renderToHtml()` server-side and inject into an iframe or `dangerouslySetInnerHTML` in a sandboxed preview page
+- Preview routes (`/templates/<type>/<slug>`) call `renderToHtml()` server-side and inject into an iframe via preview chrome
 
 ### Email defaults
 
@@ -343,13 +326,13 @@ Before marking any template complete, verify:
 - [ ] Consistent spacing (8pt rhythm)
 - [ ] Colors from design system only
 - [ ] `renderToHtml()` produces valid output without errors
-- [ ] Preview route works at `/preview/email/<slug>` or `/preview/document/<slug>`
+- [ ] Preview route works at `/templates/email/<slug>`, `/templates/document/<slug>`, or `/templates/page/<slug>`
 - [ ] Presentation-ready: would you send this to a real customer?
 - [ ] Registered in `src/lib/templates.ts` with correct category and metadata
 
 ---
 
-## Deliverables (12 Templates)
+## Deliverables (Templates)
 
 ### Email (8)
 
@@ -372,6 +355,15 @@ Before marking any template complete, verify:
 | Project Brief | `project-brief` | Business |
 | Meeting Summary | `meeting-summary` | Business |
 | Product Roadmap | `product-roadmap` | Product |
+
+### Page (4)
+
+| Template | Slug | Category |
+|----------|------|----------|
+| Product Landing | `product-landing` | Product |
+| Pricing | `pricing` | Marketing |
+| Webinar Landing | `webinar` | Marketing |
+| Agency Studio | `agency` | Business |
 
 ---
 

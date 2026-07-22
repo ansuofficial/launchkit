@@ -338,23 +338,23 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 1. Create `src/templates/email/<slug>/index.tsx`
 2. Create `src/templates/email/<slug>/preview.tsx` (sample data)
 3. Register in `src/lib/templates.ts`
-4. Verify preview at `/preview/email/<slug>`
+4. Verify preview at `/templates/email/<slug>`
 5. Export static HTML via `scripts/export-html.ts`
 6. Capture screenshot for README / gallery
 
 ### Quality gate (each template)
 
-- [ ] Realistic business copy
-- [ ] Uses shared Elements blocks
-- [ ] Consistent spacing and typography
-- [ ] `renderToHtml()` succeeds
-- [ ] Presentation-ready
+- [x] Realistic business copy
+- [x] Uses shared Elements blocks
+- [x] Consistent spacing and typography
+- [x] `renderToHtml()` succeeds
+- [x] Presentation-ready
 
 ### Checkpoint
 
-- [ ] All 8 emails preview correctly
-- [ ] Featured templates (product-launch, newsletter) wired to landing cards
-- [ ] Gallery shows all 8 email previews
+- [x] All 8 emails preview correctly
+- [x] Featured templates (product-launch, newsletter) wired to landing cards
+- [x] Gallery shows email previews
 
 ---
 
@@ -375,14 +375,14 @@ Three value cards (reference: Ship Faster / Scale Smarter / Stay Secure):
 
 Same as Phase 4, but:
 - Root wrapper: `<Document>` instead of `<Email>`
-- Preview route: `/preview/document/<slug>`
+- Preview route: `/templates/document/<slug>`
 - Print-friendly styles (page margins, page breaks where needed)
 
 ### Checkpoint
 
-- [ ] All 4 documents preview correctly
-- [ ] Gallery includes all 4 document previews
-- [ ] Total template count: 12
+- [x] All 4 documents preview correctly
+- [x] Gallery includes document previews
+- [x] Email + document suite complete (page templates also registered)
 
 ---
 
@@ -403,9 +403,9 @@ Same as Phase 4, but:
 
 ### Checkpoint
 
-- [ ] All 12 templates listed with correct categories
-- [ ] Filter/navigation works
-- [ ] Consistent card design with gallery section
+- [x] All templates listed with correct categories
+- [x] Filter/navigation works
+- [x] Consistent card design with gallery section
 
 ---
 
@@ -449,12 +449,14 @@ Same as Phase 4, but:
 
 - [x] OSS workflow files present (CI, Dependabot, CONTRIBUTING, CoC, SECURITY, issue/PR templates)
 - [x] `package.json` has repository, license, engines, typecheck/smoke scripts
-- [x] Starter README with quick start and badges
+- [x] README with quick start, catalog, render/Resend docs, and badges
+- [x] `scripts/export-html.ts` batch-exports to `public/exports/`
+- [x] CHANGELOG + .editorconfig + open-source readiness audit
 - [ ] README gallery assets (hero, screenshots, GIF) complete
 - [ ] README renders correctly on GitHub
 - [ ] All screenshots are high quality (2x)
 - [ ] GIF demonstrates the full flow
-- [ ] Installation instructions work on fresh clone
+- [x] Installation instructions work on fresh clone
 - [ ] Repo public and default branch `main` protected (require CI on PRs)
 
 ---
