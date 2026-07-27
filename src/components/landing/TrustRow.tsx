@@ -1,4 +1,8 @@
-import { brandIconUrl, TRUST_BRANDS } from "@/lib/brands";
+import {
+  TRUST_BRANDS,
+  trustBrandLogoSrc,
+  trustBrandUsesIconic,
+} from "@/lib/brands";
 
 export function TrustRow() {
   // Two identical sequences so translateX(-50%) loops seamlessly
@@ -6,12 +10,23 @@ export function TrustRow() {
 
   return (
     <section
-      aria-label="Trusted by teams"
+      aria-label="Companies that trust Unlayer, the company behind Elements"
       className="overflow-hidden bg-[var(--lk-bg-primary)] py-10 md:py-12"
     >
-      <p className="mb-8 text-center text-sm font-medium text-white/80">
-        Trusted by forward-thinking teams
-      </p>
+      <div className="mx-auto mb-8 max-w-2xl px-6 text-center">
+        <p className="text-sm font-medium text-white/80">
+          Companies that trust Unlayer
+        </p>
+        <p className="mt-2 text-xs leading-relaxed text-white/45">
+          These logos represent public customers and ecosystem brands associated
+          with <span className="text-white/60">Unlayer</span> (the company
+          behind Elements). They are{" "}
+          <span className="text-white/60">
+            not verified partners of LaunchKit
+          </span>
+          , and do not endorse this open-source project.
+        </p>
+      </div>
 
       <div className="relative">
         <div
@@ -24,26 +39,36 @@ export function TrustRow() {
         />
 
         <div className="lk-marquee-track flex w-max items-center gap-14 px-8 md:gap-20">
-          {sequence.map((brand, index) => (
-            <div
-              key={`${brand.slug}-${index}`}
-              className="flex h-10 shrink-0 items-center gap-2.5 opacity-90 transition-opacity duration-200 hover:opacity-100"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element -- Iconic Brands CDN SVGs */}
-              <img
-                src={brandIconUrl(brand.slug, "default")}
-                alt={`${brand.name} logo`}
-                width={32}
-                height={32}
-                className="size-8 shrink-0 object-contain"
-                loading="lazy"
-                decoding="async"
-              />
-              <span className="text-sm font-semibold tracking-wide text-white/90">
-                {brand.name}
-              </span>
-            </div>
-          ))}
+          {sequence.map((brand, index) => {
+            const fromIconic = trustBrandUsesIconic(brand);
+
+            return (
+              <div
+                key={`${brand.name}-${index}`}
+                className="flex h-10 shrink-0 items-center gap-2.5 opacity-90 transition-opacity duration-200 hover:opacity-100"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- Iconic Brands CDN SVGs or local Unlayer wordmarks */}
+                <img
+                  src={trustBrandLogoSrc(brand)}
+                  alt={brand.name}
+                  width={fromIconic ? 32 : 140}
+                  height={32}
+                  className={
+                    fromIconic
+                      ? "size-8 shrink-0 object-contain"
+                      : "h-8 w-auto max-w-[140px] shrink-0 object-contain object-left"
+                  }
+                  loading="lazy"
+                  decoding="async"
+                />
+                {fromIconic ? (
+                  <span className="text-sm font-semibold tracking-wide text-white/90">
+                    {brand.name}
+                  </span>
+                ) : null}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
