@@ -10,18 +10,89 @@ export function brandIconUrl(slug: string, variant = "default"): string {
   return `${CDN}/${slug}/${variant}.svg`;
 }
 
-/** Partner logos shown in the trust marquee (dark band). */
-export const TRUST_BRANDS = [
-  { name: "Google", slug: "google" },
-  { name: "Dropbox", slug: "dropbox" },
-  { name: "Airbnb", slug: "airbnb" },
-  { name: "Spotify", slug: "spotify" },
-  { name: "Microsoft", slug: "microsoft" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "GitHub", slug: "github" },
-  { name: "Notion", slug: "notion" },
-  { name: "Linear", slug: "linear" },
-  { name: "Figma", slug: "figma" },
-  { name: "Slack", slug: "slack" },
-  { name: "Vercel", slug: "vercel" },
+export type TrustBrand = {
+  name: string;
+  /**
+   * Iconic Brands slug when the brand exists on
+   * https://iconicbrands.vercel.app (preferred logo source).
+   */
+  iconicSlug: string | null;
+  /**
+   * Fallback wordmark path (Unlayer public marquee assets).
+   * Used when Iconic Brands has no matching icon so the strip
+   * stays complete and consistent.
+   */
+  localPath: string;
+};
+
+/**
+ * Public customer logos from Unlayer's homepage marquee.
+ * Ecosystem context for Elements / Unlayer only.
+ * These are not verified partners or customers of LaunchKit.
+ */
+export const TRUST_BRANDS: readonly TrustBrand[] = [
+  {
+    name: "Mastercard",
+    iconicSlug: "mastercard",
+    localPath: "/images/partners/mastercard.png",
+  },
+  {
+    name: "Bank of America",
+    iconicSlug: "bank-of-america",
+    localPath: "/images/partners/bank-of-america.png",
+  },
+  {
+    name: "Fidelity",
+    iconicSlug: null,
+    localPath: "/images/partners/fidelity.png",
+  },
+  {
+    name: "Twilio",
+    iconicSlug: "twilio",
+    localPath: "/images/partners/twilio.png",
+  },
+  {
+    name: "Lightspeed",
+    iconicSlug: null,
+    localPath: "/images/partners/lightspeed.png",
+  },
+  {
+    name: "Chargebee",
+    iconicSlug: null,
+    localPath: "/images/partners/chargebee.png",
+  },
+  {
+    name: "Keap",
+    iconicSlug: null,
+    localPath: "/images/partners/keap.png",
+  },
+  {
+    name: "Airship",
+    iconicSlug: null,
+    localPath: "/images/partners/airship.png",
+  },
+  {
+    name: "Hive",
+    iconicSlug: "hive",
+    localPath: "/images/partners/hive.png",
+  },
+  {
+    name: "Innovaccer",
+    iconicSlug: null,
+    localPath: "/images/partners/innovaccer.png",
+  },
 ] as const;
+
+/**
+ * Prefer Iconic Brands when a slug exists; otherwise local marquee wordmark.
+ */
+export function trustBrandLogoSrc(brand: TrustBrand): string {
+  if (brand.iconicSlug) {
+    return brandIconUrl(brand.iconicSlug, "default");
+  }
+  return brand.localPath;
+}
+
+export function trustBrandUsesIconic(brand: TrustBrand): boolean {
+  return brand.iconicSlug !== null;
+}
